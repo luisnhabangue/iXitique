@@ -4,15 +4,16 @@ public class User {
     private long id;
     private String username;
     private String password;
-    private String nome;
-    private String apelido;
+    private String  firstName;
+    private String lastName;
 
-    public User(long id, String username, String password, String nome, String apelido) {
+
+    public User(long id, String username, String password, String firstName, String lastName) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.nome = nome;
-        this.apelido = apelido;
+        this.firstName = firstName;
+        this.lastName = lastName ;
     }
 
     public long getId() {
@@ -39,19 +40,19 @@ public class User {
         this.password = password;
     }
 
-    public String getNome() {
-        return nome;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getApelido() {
-        return apelido;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setApelido(String apelido) {
-        this.apelido = apelido;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
