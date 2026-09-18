@@ -1,14 +1,27 @@
 package model;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "users")
 public class User {
-    private long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false, unique = true)
     private String username;
+
+    @Column(nullable = false)
+    //The password will be kept as Hash
     private String password;
     private String  firstName;
     private String lastName;
 
 
-    public User(long id, String username, String password, String firstName, String lastName) {
+    public User(Integer id, String username, String password, String firstName, String lastName) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -16,11 +29,15 @@ public class User {
         this.lastName = lastName ;
     }
 
-    public long getId() {
+    public User() {
+
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -35,6 +52,7 @@ public class User {
     public String getPassword() {
         return password;
     }
+
 
     public void setPassword(String password) {
         this.password = password;
@@ -55,4 +73,6 @@ public class User {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+
 }

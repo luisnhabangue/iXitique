@@ -1,25 +1,31 @@
 package model;
 
-public class Group {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.ArrayList;
 
-    private long groupId;
+@Entity
+public class Group {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int groupId;
     private String groupName;
-    private Member members;
+    private ArrayList<Member> member;
     private Contribuition contribuition;
 
-
-
-    public Group(long groupId, String groupName, Member members) {
+    public Group(int groupId, String groupName, ArrayList<Member> member) {
         this.groupId = groupId;
         this.groupName = groupName;
-        this.members = members;
+        this.member = member;
     }
 
     public long getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(long groupId) {
+    public void setGroupId(int groupId) {
         this.groupId = groupId;
     }
 
@@ -31,11 +37,11 @@ public class Group {
         this.groupName = groupName;
     }
 
-    public Member getMembers() {
-        return members;
+    public ArrayList<Member> getMember() {
+        return member;
     }
 
-    public void setMembers(Member members) {
-        this.members = members;
+    public void setMember(ArrayList<Member> member) {
+        this.member = member;
     }
 }
