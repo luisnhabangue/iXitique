@@ -1,6 +1,9 @@
 package model;
 
 import jakarta.persistence.*;
+import model.enums.UserRole;
+
+import java.math.BigDecimal;
 
 
 @Entity
@@ -14,22 +17,42 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
-    @Column(nullable = false)
-    //The password will be kept as Hash
+    @Column(unique = true)
+    private String email;
+    @Column(name = "password_hash", nullable = false)
     private String password;
+
+
     private String  firstName;
     private String lastName;
 
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
-    public User(Integer id, String username, String password, String firstName, String lastName) {
+
+    public User(Integer id, String username, String email, String password, String firstName, String lastName) {
         this.id = id;
         this.username = username;
+        this.email = email;
         this.password = password;
         this.firstName = firstName;
-        this.lastName = lastName ;
+        this.lastName = lastName;
+        this.role = UserRole.base;
     }
 
     public User() {
+
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
+    }
+
+    public User(Object o, String username, String email, String hash, String firstname, String lastname) {
 
     }
 
@@ -53,6 +76,13 @@ public class User {
         return password;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public void setPassword(String password) {
         this.password = password;
