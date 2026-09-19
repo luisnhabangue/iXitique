@@ -27,7 +27,7 @@ public class AuthService {
                 BCrypt.gensalt(12)
         );
 
-        User user = new User(null,username,email,hash,firstname,lastname);
+        User user = new User(null,username,email,hashPassword,firstname,lastname);
         userDao.saveUser(user);
 
     }
