@@ -1,5 +1,0 @@
-package model;
-
-public enum TipoMensagem {
-    LEMBRETE,AVISO,CONFIRMACAO,ATRASO,RECEBIMENTO,INFORMACAO
-}

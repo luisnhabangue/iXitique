@@ -1,12 +1,12 @@
 package model;
 
-public class Membro {
+public class Member {
     private String id;
     private String nome;
     private String telefone;
     private int pontuacao;
 
-    public Membro(String id, String nome, String telefone, int pontuacao) {
+    public Member(String id, String nome, String telefone, int pontuacao) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
