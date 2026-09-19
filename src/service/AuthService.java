@@ -31,16 +31,14 @@ public class AuthService {
     }
 
     public boolean login(String username, String password){
-
         user = userDao.searchByUsername(username);
+
         if (user==null) return false;
+
         return BCrypt.checkpw(password, user.getPassword());
     }
 
 
-    /*
 
-
-*/
 
 }
