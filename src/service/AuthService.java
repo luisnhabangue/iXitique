@@ -7,6 +7,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import jakarta.persistence.EntityManagerFactory;
 import utils.JPAUtil;
+import utils.PasswordUtil;
 
 import javax.persistence.Persistence;
 
@@ -22,9 +23,9 @@ public class AuthService {
     }
 
     public void register(String username,String email, String password, String firstname, String lastname){
-        String hashPassword =
+        String hashPassword = PasswordUtil.createHashPassword(password);
 
-        User user = new User(null,username,email,hash,firstname,lastname);
+        User user = new User(null,username,email,hashPassword,firstname,lastname);
         userDao.createUser(user);
 
     }
