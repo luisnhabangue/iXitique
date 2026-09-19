@@ -22,7 +22,7 @@ public class AuthService {
     }
 
     public void register(String username,String email, String password, String firstname, String lastname){
-        String hash = BCrypt.hashpw(
+        String hashPassword = BCrypt.hashpw(
                 password,
                 BCrypt.gensalt(12)
         );
