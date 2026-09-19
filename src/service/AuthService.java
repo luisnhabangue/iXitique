@@ -22,13 +22,10 @@ public class AuthService {
     }
 
     public void register(String username,String email, String password, String firstname, String lastname){
-        String hashPassword = BCrypt.hashpw(
-                password,
-                BCrypt.gensalt(12)
-        );
+        String hashPassword =
 
-        User user = new User(null,username,email,hashPassword,firstname,lastname);
-        userDao.saveUser(user);
+        User user = new User(null,username,email,hash,firstname,lastname);
+        userDao.createUser(user);
 
     }
 
