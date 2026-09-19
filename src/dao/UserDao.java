@@ -15,7 +15,7 @@ public class UserDao {
         this.entityManagerFactory = entityManagerFactory;
     }
 
-    public void saveUser(User user){
+    public void createUser(User user){
         EntityManager em = entityManagerFactory.createEntityManager();
 
         try {
