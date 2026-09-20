@@ -21,7 +21,8 @@ public class User {
     private String email;
     @Column(name = "password_hash", nullable = false)
     private String password;
-
+    @Column(nullable = false)
+    private boolean active;
 
     private String  firstName;
     private String lastName;
@@ -34,6 +35,7 @@ public class User {
         this.id = id;
         this.username = username;
         this.email = email;
+        this.active = true;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -43,6 +45,7 @@ public class User {
     public User() {
 
     }
+
 
     public UserRole getRole() {
         return role;
@@ -86,6 +89,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public String getFirstName() {
