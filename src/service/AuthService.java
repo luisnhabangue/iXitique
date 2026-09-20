@@ -1,15 +1,13 @@
 package service;
 import model.User;
 import dao.UserDao;
-import net.bytebuddy.implementation.bytecode.Remainder;
-import org.hibernate.tool.schema.internal.DefaultSchemaFilter;
+
 import org.mindrot.jbcrypt.BCrypt;
 
-import jakarta.persistence.EntityManagerFactory;
+
 import utils.JPAUtil;
 import utils.PasswordUtil;
 
-import javax.persistence.Persistence;
 
 
 public class AuthService {

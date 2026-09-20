@@ -4,15 +4,17 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence
                                  https://jakarta.ee/xml/ns/persistence/persistence_3_1.xsd"
-             version="3.0">
+             version="3.1">
 
     <persistence-unit name="iXitique" transaction-type="RESOURCE_LOCAL">
 
         <!-- Implementação JPA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <!-- Entidades -->
 
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <!-- Entidades -->
+        <class>model.User</class>
         <properties>
 
             <!-- ============================= -->

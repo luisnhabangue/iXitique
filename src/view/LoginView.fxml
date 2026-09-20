@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.Icon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -31,19 +32,22 @@
                <children>
                   <VBox alignment="CENTER_LEFT" layoutX="43.0" layoutY="44.0" prefHeight="333.0" prefWidth="294.0">
                      <children>
-                        <Label id="lbLogin" prefHeight="18.0" prefWidth="60.0" text="LOGIN">
+                        <Label id="lbLogin" prefHeight="18.0" prefWidth="60.0" text="Entrar">
                            <VBox.margin>
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </Label>
-                        <Label id="lbUser" alignment="CENTER" text="Username" />
+                        <Label id="lbUser" alignment="CENTER" text="Email/Nome de usuário" />
                         <TextField id="tfUsername" prefHeight="26.0" prefWidth="128.0" />
-                        <Label id="lbPassword" alignment="BOTTOM_LEFT" text="Password" />
+                        <Label id="lbPassword" alignment="BOTTOM_LEFT" text="Senha" />
                         <TextField id="tfUsername" />
-                        <Button mnemonicParsing="false" onAction="#btnLogin" prefHeight="26.0" prefWidth="319.0" text="Login">
+                        <Button mnemonicParsing="false" onAction="#btnLogin" prefHeight="26.0" prefWidth="319.0" text="Entrar">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
+                           <graphic>
+                              <Icon content="HELP_OUTLINE" />
+                           </graphic>
                         </Button>
                      </children>
                      <padding>
