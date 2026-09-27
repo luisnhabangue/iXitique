@@ -5,90 +5,136 @@ import model.Group;
 
 import java.util.ArrayList;
 
-    public class GroupService {
+public class GroupService {
 
-        private final GroupDao groupDao;
+    private final GroupDao groupDao;
 
-        public GroupService(GroupDao groupDao) {
-            this.groupDao = groupDao;
+    public GroupService(GroupDao groupDao) {
+        this.groupDao = groupDao;
+    }
+
+    // Criar grupo
+    public void createGroup(Group group) {
+
+        if (group == null) {
+            throw new IllegalArgumentException(
+                    "O grupo não pode ser nulo."
+            );
         }
 
-        // Criar um novo grupo
-        public void createGroup(Group group) {
+        if (group.getGroupName() == null ||
+                group.getGroupName().trim().isEmpty()) {
 
-            if (group == null) {
-                throw new IllegalArgumentException(
-                        "O grupo não pode ser nulo."
-                );
-            }
-
-            if (group.getName() == null ||
-                    group.getName().trim().isEmpty()) {
-
-                throw new IllegalArgumentException(
-                        "O nome do grupo é obrigatório."
-                );
-            }
-
-            groupDao.save(group);
+            throw new IllegalArgumentException(
+                    "O nome do grupo é obrigatório."
+            );
         }
 
-        // Procurar grupo pelo ID
-        public Group findGroupById(int id) {
+        if (group.getMonthlyAmount() == null ||
+                group.getMonthlyAmount().signum() <= 0) {
 
-            if (id <= 0) {
-                throw new IllegalArgumentException(
-                        "ID do grupo inválido."
-                );
-            }
-
-            Group group = groupDao.findById(id);
-
-            if (group == null) {
-                throw new IllegalArgumentException(
-                        "Grupo não encontrado."
-                );
-            }
-
-            return group;
+            throw new IllegalArgumentException(
+                    "O valor mensal deve ser maior que zero."
+            );
         }
 
-        // Listar todos os grupos
-        public ArrayList<Group> listGroups() {
-            return groupDao.findAll();
+        if (group.getStartDate() == null) {
+            throw new IllegalArgumentException(
+                    "A data de início é obrigatória."
+            );
         }
 
-        // Atualizar grupo
-        public void updateGroup(Group group) {
-
-            if (group == null) {
-                throw new IllegalArgumentException(
-                        "O grupo não pode ser nulo."
-                );
-            }
-
-            if (group.getName() == null ||
-                    group.getName().trim().isEmpty()) {
-
-                throw new IllegalArgumentException(
-                        "O nome do grupo é obrigatório."
-                );
-            }
-
-            // Verifica se o grupo existe
-            findGroupById(group.getId());
-
-            groupDao.update(group);
+        if (group.getStatus() == null) {
+            throw new IllegalArgumentException(
+                    "O estado do grupo é obrigatório."
+            );
         }
 
-        // Eliminar grupo
-        public void deleteGroup(int id) {
+        groupDao.save(group);
+    }
 
-            // Primeiro verifica se existe
-            Group group = findGroupById(id);
+    // Procurar grupo pelo ID
+    public Group findGroupById(Long id) {
 
-            groupDao.delete(group);
+        if (id == null || id <= 0) {
+            throw new IllegalArgumentException(
+                    "ID do grupo inválido."
+            );
         }
 
+        Group group = groupDao.findById(id);
 
+        if (group == null) {
+            throw new IllegalArgumentException(
+                    "Grupo não encontrado."
+            );
+        }
+
+        return group;
+    }
+
+    // Listar grupos
+    public ArrayList<Group> listGroups() {
+        return groupDao.findAll();
+    }
+
+    // Atualizar grupo
+    public void updateGroup(Group group) {
+
+        if (group == null) {
+            throw new IllegalArgumentException(
+                    "O grupo não pode ser nulo."
+            );
+        }
+
+        if (group.getGroupId() == null ||
+                group.getGroupId() <= 0) {
+
+            throw new IllegalArgumentException(
+                    "ID do grupo inválido."
+            );
+        }
+
+        if (group.getGroupName() == null ||
+                group.getGroupName().trim().isEmpty()) {
+
+            throw new IllegalArgumentException(
+                    "O nome do grupo é obrigatório."
+            );
+        }
+
+        if (group.getMonthlyAmount() == null ||
+                group.getMonthlyAmount().signum() <= 0) {
+
+            throw new IllegalArgumentException(
+                    "O valor mensal deve ser maior que zero."
+            );
+        }
+
+        if (group.getStartDate() == null) {
+            throw new IllegalArgumentException(
+                    "A data de início é obrigatória."
+            );
+        }
+
+        if (group.getStatus() == null) {
+            throw new IllegalArgumentException(
+                    "O estado do grupo é obrigatório."
+            );
+        }
+
+        // Verifica se o grupo existe
+        findGroupById(group.getGroupId());
+
+        groupDao.update(group);
+    }
+
+    // Eliminar grupo
+    public void deleteGroup(Long id) {
+
+        Group group = findGroupById(id);
+
+        groupDao.delete(group);
+    }
 }
+

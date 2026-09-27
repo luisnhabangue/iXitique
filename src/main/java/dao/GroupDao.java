@@ -7,12 +7,12 @@ import model.Group;
 import java.util.ArrayList;
 
 public class GroupDao {
+
     private final EntityManager entityManager;
 
     public GroupDao(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
-
 
     public void save(Group group) {
 
@@ -38,8 +38,7 @@ public class GroupDao {
         }
     }
 
-
-    public Group findById(int id) {
+    public Group findById(Long id) {
 
         try {
             return entityManager.find(Group.class, id);
@@ -52,7 +51,6 @@ public class GroupDao {
             );
         }
     }
-
 
     public ArrayList<Group> findAll() {
 
@@ -108,7 +106,10 @@ public class GroupDao {
             transaction.begin();
 
             Group groupToDelete =
-                    entityManager.find(Group.class, group.getId());
+                    entityManager.find(
+                            Group.class,
+                            group.getGroupId()
+                    );
 
             if (groupToDelete == null) {
                 throw new RuntimeException(
@@ -133,3 +134,4 @@ public class GroupDao {
         }
     }
 }
+
