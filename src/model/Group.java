@@ -1,47 +1,31 @@
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import jakarta.persistence.*;
+
+
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.sql.Date;
+import java.util.List;
 
 @Entity
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int groupId;
+
+    private long groupId;
     private String groupName;
-    private ArrayList<Member> member;
-    private Contribuition contribuition;
+    private String groupDescription;
+    private Date startDate;
+    private boolean isActive;
+    private BigDecimal contribuition;
 
-    public Group(int groupId, String groupName, ArrayList<Member> member) {
-        this.groupId = groupId;
-        this.groupName = groupName;
-        this.member = member;
-    }
+    private Integer period;
 
-    public long getGroupId() {
-        return groupId;
-    }
+    @OneToMany(mappedBy = "grupo")
+    public ArrayList<GroupParticipation> participations;
 
-    public void setGroupId(int groupId) {
-        this.groupId = groupId;
-    }
 
-    public String getGroupName() {
-        return groupName;
-    }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
-    }
 
-    public ArrayList<Member> getMember() {
-        return member;
-    }
-
-    public void setMember(ArrayList<Member> member) {
-        this.member = member;
-    }
 }
