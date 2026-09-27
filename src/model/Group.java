@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.sql.Date;
+import java.util.List;
 
 
 @Entity
@@ -25,6 +26,8 @@ public class Group {
     @OneToMany(mappedBy = "grupo")
     public ArrayList<GroupParticipation> participations;
 
+    @OneToMany(mappedBy = "grupo")
+    private List<Cycle> ciclos = new ArrayList<>();
 
 
 

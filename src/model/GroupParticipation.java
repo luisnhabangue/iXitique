@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import model.enums.ParticipationStatus;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class GroupParticipation {
@@ -24,9 +26,14 @@ public class GroupParticipation {
         private Date joiningDate;
 
         @Enumerated(EnumType.STRING)
-        private ParticipationStatus estado;
+        private ParticipationStatus status;
 
+        @OneToMany(mappedBy = "participacao")
+        private List<Contribuition> contribuicoes;
 
     public GroupParticipation() {
     }
+
+
+
 }
