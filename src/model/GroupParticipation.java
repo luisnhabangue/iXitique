@@ -21,7 +21,7 @@ public class GroupParticipation {
         @JoinColumn(name = "grupo_id", nullable = false)
         private Group group;
 
-        private Date dataEntrada;
+        private Date joiningDate;
 
         @Enumerated(EnumType.STRING)
         private ParticipationStatus estado;
