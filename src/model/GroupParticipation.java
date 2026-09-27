@@ -29,7 +29,7 @@ public class GroupParticipation {
         private ParticipationStatus status;
 
         @OneToMany(mappedBy = "participacao")
-        private List<Contribuition> contribuicoes;
+        private List<Contribuition> contribuitions;
 
     public GroupParticipation() {
     }
