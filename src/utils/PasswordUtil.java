@@ -6,6 +6,8 @@ public class PasswordUtil {
 
     public static String createHashPassword(String password){
 
+
+
         return BCrypt.hashpw(password, BCrypt.gensalt(12));
 
     }
