@@ -8,6 +8,8 @@ public interface UserDaoInterface {
 
     public void createUser(User user);
     public User findById(Integer id);
+    public User findByUsername(String username);
+    public User findByEmail(String email);
     public void updateUser(User user);
     public void disableUser(Integer id);
     public void deleteUser(Integer id);
