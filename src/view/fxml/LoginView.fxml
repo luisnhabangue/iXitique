@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="anchorPane" prefHeight="501.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AuthController">
+   <children>
+      <BorderPane prefHeight="516.0" prefWidth="710.0" style="-fx-background-color: blue;">
+         <left>
+            <VBox prefHeight="516.0" prefWidth="284.0" style="-fx-background-color: #048523;" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <AnchorPane prefHeight="516.0" prefWidth="427.0" style="-fx-background-color: #9c9c9c;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="54.0" layoutY="91.0" prefHeight="31.0" prefWidth="213.0" text="Entre na sua conta">
+                     <font>
+                        <Font name="Plus Jakarta Sans Regular" size="23.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="57.0" layoutY="125.0" prefHeight="21.0" prefWidth="325.0" text="Seja bem vindo de volta! Por favor insira os seus dados">
+                     <font>
+                        <Font name="Plus Jakarta Sans Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="119.0" layoutY="434.0" text="Não tem uma conta?" />
+                  <MFXPasswordField fx:id="pfPassword" floatMode="DISABLED" layoutX="56.0" layoutY="265.0" prefHeight="36.0" prefWidth="327.0" />
+                  <MFXTextField fx:id="tfUser" borderGap="0.0" floatMode="DISABLED" layoutX="57.0" layoutY="202.0" prefHeight="30.0" prefWidth="325.0" />
+                  <MFXButton fx:id="btEntrar" layoutX="55.0" layoutY="352.0" prefHeight="35.0" prefWidth="327.0" style="-fx-background-color: cyan;" text="Entrar" />
+                  <Label layoutX="57.0" layoutY="178.0" text="Nome de utilizador, e-mail ou n.º de telefone" />
+                  <Label layoutX="57.0" layoutY="240.0" text="Palavra-passe" />
+                  <Hyperlink fx:id="lbCreateAccount" layoutX="246.0" layoutY="431.0" onAction="#createAccount" text="Criar conta" />
+                  <Hyperlink fx:id="lbForgotPassword" layoutX="246.0" layoutY="315.0" text="Esqueci-me da senha!" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
