@@ -18,7 +18,7 @@ public class Testes {
 
 
         //UserDao ud = new UserDao(JPAUtil.getEntityManagerFactory());
-        User user = new User(null,"teste33","teste@email.com212","1234","luis","nhabangue");
+      //  User user = new User(null,"teste33","teste@email.com212","1234","luis","nhabangue");
 
         //ud.createUser(user);
        //as.register("q","teste@email.com21q2","1234","luis","nhabangue");
