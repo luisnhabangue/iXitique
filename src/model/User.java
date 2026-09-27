@@ -3,16 +3,12 @@ package model;
 import jakarta.persistence.*;
 import model.enums.UserRole;
 
-import java.math.BigDecimal;
+import java.sql.Date;
 
 
 @Entity
 @Table(name = "users")
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class User extends Person {
 
     @Column(nullable = false, unique = true)
     private String username;
@@ -21,31 +17,36 @@ public class User {
     private String email;
     @Column(name = "password_hash", nullable = false)
     private String password;
+    @Column(unique = true)
+    private String phoneNumber;
     @Column(nullable = false)
     private boolean active;
-
-    private String  firstName;
-    private String lastName;
 
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
 
-    public User(Integer id, String username, String email, String password, String firstName, String lastName) {
-        this.id = id;
+    public User(Long id, String firstname, String lastname, Date birthdate, String documentId, String username, String email, String password, String phoneNumber, boolean active, UserRole role) {
+        super(id, firstname, lastname, birthdate, documentId);
         this.username = username;
         this.email = email;
-        this.active = true;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.role = UserRole.base;
+        this.phoneNumber = phoneNumber;
+        this.active = active;
+        this.role = role;
     }
 
     public User() {
 
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public UserRole getRole() {
         return role;
@@ -55,22 +56,9 @@ public class User {
         this.role = role;
     }
 
-    public User(Object o, String username, String email, String hash, String firstname, String lastname) {
-
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
@@ -99,21 +87,7 @@ public class User {
         this.active = active;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
 
 }
