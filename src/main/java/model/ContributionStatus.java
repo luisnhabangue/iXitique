@@ -1,5 +1,5 @@
 package model;
 
-public enum Status {
+public enum ContributionStatus {
    PAID, PENDING, OVERDUE
 }
