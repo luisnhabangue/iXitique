@@ -1,7 +1,9 @@
 package model;
 
 import jakarta.persistence.*;
-import java.util.List;
+
+import java.util.ArrayList;
+
 
 @Entity
 public class Member {
@@ -13,18 +15,9 @@ public class Member {
     @OneToOne
     @JoinColumn(name = "member_user_id")
     private User memberUser;
-    @ManyToMany
 
-    @JoinColumn(name = "group_id")
-    private List<Group> group;
-
-    public User getMemberUser() {
-        return memberUser;
-    }
-
-    public void setMemberUser(User memberUser) {
-        this.memberUser = memberUser;
-    }
+    @OneToMany(mappedBy = "membro")
+    private ArrayList<GroupParticipation> participations;
 
 
     public Member() {

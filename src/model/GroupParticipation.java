@@ -1,6 +1,7 @@
 package model;
 
 import jakarta.persistence.*;
+import model.enums.ParticipationStatus;
 
 import java.sql.Date;
 
@@ -10,17 +11,21 @@ public class GroupParticipation {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Integer id;
+        private Long id;
 
         @ManyToOne
-        private Member membro;
+        @JoinColumn(name = "member_id", nullable = false)
+        private Member member;
 
         @ManyToOne
-        private Group grupo;
+        @JoinColumn(name = "grupo_id", nullable = false)
+        private Group group;
 
         private Date dataEntrada;
 
-        private boolean ativo;
+        @Enumerated(EnumType.STRING)
+        private ParticipationStatus estado;
+
 
     public GroupParticipation() {
     }
