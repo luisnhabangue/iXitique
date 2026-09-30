@@ -1,7 +1,6 @@
 package model;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -39,7 +38,6 @@ public class Group {
 
         this.groupId = id;
         this.groupName = name;
-        this.monthlyAmount = monthlyAmount;
         this.startDate = startDate;
         this.status = status;
     }
