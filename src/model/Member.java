@@ -23,4 +23,20 @@ public class Member {
     public Member() {
 
     }
+
+    public User getMemberUser() {
+        return memberUser;
+    }
+
+    public void setMemberUser(User memberUser) {
+        this.memberUser = memberUser;
+    }
+
+    public ArrayList<GroupParticipation> getParticipations() {
+        return participations;
+    }
+
+    public void setParticipations(ArrayList<GroupParticipation> participations) {
+        this.participations = participations;
+    }
 }
