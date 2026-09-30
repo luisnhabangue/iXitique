@@ -4,6 +4,8 @@ module iXitique {
     // JPA
     requires jakarta.persistence;
 
+
+
     requires org.hibernate.orm.core;
 
     // JavaFX

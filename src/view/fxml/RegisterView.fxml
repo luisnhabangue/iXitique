@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
-<?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,34 +12,25 @@
 
     <children>
         <BorderPane prefHeight="516.0" prefWidth="710.0" style="-fx-background-color: blue;">
-         <left>
-                <AnchorPane prefHeight="516.0" prefWidth="427.0" style="-fx-background-color: #9c9c9c;" BorderPane.alignment="CENTER">
+         <center>
+                <AnchorPane prefHeight="516.0" prefWidth="427.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                     <children>
-                        <Label layoutX="55.0" layoutY="50.0" prefHeight="31.0" prefWidth="213.0" text="Crie a sua conta">
+                        <Label layoutX="74.0" layoutY="201.0" prefHeight="31.0" prefWidth="213.0" text="Crie a sua conta">
                             <font>
                                 <Font name="Plus Jakarta Sans Regular" size="23.0" />
                             </font>
                         </Label>
-                        <Label layoutX="57.0" layoutY="85.0" prefHeight="21.0" prefWidth="108.0" text="Já tem uma conta? ">
+                        <Label layoutX="74.0" layoutY="234.0" prefHeight="21.0" prefWidth="108.0" text="Já tem uma conta? ">
                             <font>
                                 <Font name="Plus Jakarta Sans Regular" size="12.0" />
                             </font>
                         </Label>
-                        <MFXTextField fx:id="tfUser" borderGap="0.0" floatMode="BORDER" floatingText="Primeiro nome*" layoutX="57.0" layoutY="138.0" prefHeight="30.0" prefWidth="325.0" promptText="Ex: Zeinadine Lucas" />
-                        <MFXButton fx:id="btEntrar" layoutX="55.0" layoutY="428.0" prefHeight="35.0" prefWidth="327.0" style="-fx-background-color: cyan;" text="Entrar" />
+                        <MFXButton fx:id="btCriarConta" layoutX="129.0" layoutY="269.0" prefHeight="35.0" prefWidth="243.0" style="-fx-background-color: cyan;" text="Criar Conta" />
                       <VBox layoutX="476.0" prefHeight="516.0" prefWidth="284.0" style="-fx-background-color: #048523;" />
-                  <Hyperlink layoutX="161.0" layoutY="83.0" text="Entrar na minha conta" />
-                  <MFXTextField floatMode="BORDER" floatingText="Apelido*" layoutX="56.0" layoutY="201.0" prefHeight="30.0" prefWidth="328.0" promptText="Ex: Bule" />
-                  <MFXTextField floatMode="BORDER" floatingText="N.º de Telefone" layoutX="56.0" layoutY="265.0" prefHeight="39.0" prefWidth="328.0" promptText="Ex: 853410658" />
-                  <Label layoutX="316.0" layoutY="109.0" text="* Obrigatório">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Label>
-                  <MFXTextField floatMode="BORDER" floatingText="E-mail" layoutX="55.0" layoutY="329.0" prefHeight="27.0" prefWidth="330.0" promptText="Ex: meuemail@gmail.com" />
+                  <Hyperlink layoutX="178.0" layoutY="232.0" text="Entre na sua conta" />
                     </children>
                 </AnchorPane>
-         </left>
+         </center>
         </BorderPane>
     </children>
 </AnchorPane>

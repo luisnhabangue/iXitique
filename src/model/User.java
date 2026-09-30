@@ -1,6 +1,7 @@
 package model;
 
 import jakarta.persistence.*;
+import model.enums.Gender;
 import model.enums.UserRole;
 
 import java.sql.Date;
@@ -26,14 +27,22 @@ public class User extends Person {
     private UserRole role;
 
 
-    public User(Long id, String firstname, String lastname, Date birthdate, String documentId, String username, String email, String password, String phoneNumber, boolean active, UserRole role) {
-        super(id, firstname, lastname, birthdate, documentId);
+    public User(Long id, String firstname, String lastname,Gender gender, Date birthdate, String documentId, String username, String email, String password, String phoneNumber, boolean active, UserRole role) {
+        super(id, firstname, lastname, gender, birthdate, documentId);
         this.username = username;
         this.email = email;
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.active = active;
         this.role = role;
+    }
+    //Construtor para usuario temporario, que vai ser usado para registro
+    public User(String firstname, String lastname, Gender gender, Date birthdate, String username, String email, String password, String phoneNumber) {
+        super(firstname, lastname, gender, birthdate);
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
     }
 
     public User() {

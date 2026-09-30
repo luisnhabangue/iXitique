@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="anchorPane" prefHeight="501.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AuthController">
+<AnchorPane id="anchorPane" prefHeight="501.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
       <BorderPane prefHeight="516.0" prefWidth="710.0" style="-fx-background-color: blue;">
          <left>

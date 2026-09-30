@@ -12,9 +12,16 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 
-        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
         <!-- Entidades -->
+        <class>model.Cycle</class>
+        <class>model.Member</class>
+        <class>model.GroupParticipation</class>
+        <class>model.Contribuition</class>
+        <class>model.Group</class>
         <class>model.User</class>
+        <class>model.Person</class>
+
         <properties>
 
             <!-- ============================= -->

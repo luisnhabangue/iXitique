@@ -7,6 +7,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import model.User;
 
+import java.nio.file.LinkOption;
 import java.util.List;
 
 public class UserDao implements UserDaoInterface {
@@ -38,7 +39,7 @@ public class UserDao implements UserDaoInterface {
     }
 
     @Override
-    public User findById(Integer id) {
+    public User findById(Long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
 
         try {
@@ -65,30 +66,31 @@ public class UserDao implements UserDaoInterface {
         }
     }
 
-   public User findByEmail(String email) {
+    @Override
+    public User findByEmail(String email) {
 
         EntityManager em = entityManagerFactory.createEntityManager();
 
         try {
             return em.createQuery(
-                    "SELECT u FROM User u WHERE u.email = :email",
+                    "SELECT u FROM User u WHERE u.email = :phoneNumber",
                     User.class
-            ).setParameter("email", email).getSingleResult();
+            ).setParameter("phoneNumber", email).getSingleResult();
 
         } finally {
             em.close();
         }
     }
 
-    public User findByPhone(String email) {
+    public User findByPhone(String phone) {
 
         EntityManager em = entityManagerFactory.createEntityManager();
 
         try {
             return em.createQuery(
-                    "SELECT u FROM User u WHERE u.email = :email",
+                    "SELECT u FROM User u WHERE u.phoneNumber = :phone",
                     User.class
-            ).setParameter("email", email).getSingleResult();
+            ).setParameter("email", phone).getSingleResult();
 
         } finally {
             em.close();
@@ -99,6 +101,7 @@ public class UserDao implements UserDaoInterface {
     public void updateUser(User user) {
         EntityManager em = entityManagerFactory.createEntityManager();
         EntityTransaction et = em.getTransaction();
+
         try {
 
             et.begin();
@@ -116,12 +119,10 @@ public class UserDao implements UserDaoInterface {
         }
 
     }
-
-    public void deleteUser(Integer id) {
+    @Override
+    public void deleteUser(Long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
         EntityTransaction et = em.getTransaction();
-
-
         try {
             et.begin();
             User user = em.find(User.class, id);
@@ -147,7 +148,7 @@ public class UserDao implements UserDaoInterface {
 
 
     @Override
-    public void disableUser(Integer id) {
+    public void disableUser(Long id) {
         EntityManager em = entityManagerFactory.createEntityManager();
         EntityTransaction et = em.getTransaction();
 
@@ -169,7 +170,7 @@ public class UserDao implements UserDaoInterface {
         }
 
     }
-
+    @Override
     public List<User> listAllUsers() {
 
         return null;

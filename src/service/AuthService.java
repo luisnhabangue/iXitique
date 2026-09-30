@@ -23,15 +23,12 @@ public class AuthService {
 
     public void register(String username,String email, String password,String phoneNumber, String firstname, String lastname){
 
-        String phoneNumberUpdated = "";
-
 
         if (thisUsernameExists(username)) throw new UserAlreadyExistsException("Nome de usuário inválido");
 
         if (thisEmailExists(email)) throw new UserAlreadyExistsException("Email inválido");
 
         if (thisPhoneNumberExists(phoneNumber)) throw new UserAlreadyExistsException("Numero inválido");
-
 
 
         if (!username.matches("[0-9a-z_.-]{3,20}")) throw new InvalidUsernameException("O nome de usuário deve ter entre 3 e 20 caracteres e conter apenas letras minúsculas, números, '.', '-' ou '_'");
@@ -47,7 +44,7 @@ public class AuthService {
         }
 
         String hashPassword = PasswordUtil.createHashPassword(password);
-     //   user = new User(null,firstname,lastname,);
+
        // userDao.createUser(user);
 
     }

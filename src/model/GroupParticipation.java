@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import model.enums.ParticipationStatus;
 
 import java.sql.Date;
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Entity
@@ -30,6 +30,7 @@ public class GroupParticipation {
 
         @OneToMany(mappedBy = "participacao")
         private List<Contribuition> contribuitions;
+
 
     public GroupParticipation() {
     }

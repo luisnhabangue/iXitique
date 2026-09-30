@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import service.AuthService;
 
 
-public class AuthController {
+public class LoginController {
     AuthService as;
     @FXML
     private TextField tfUsername;
@@ -15,8 +15,9 @@ public class AuthController {
     private TextField pfPassword;
 
 
-    public AuthController() {
+    public LoginController() {
       //  this.as = new AuthService();
+
     }
 
     @FXML
@@ -26,10 +27,9 @@ public class AuthController {
         String password = pfPassword.getText();
 
         as.login(username,password);
-
-
     }
 
     public void createAccount(ActionEvent actionEvent) {
+
     }
 }

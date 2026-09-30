@@ -4,7 +4,7 @@ import io.github.palexdev.materialfx.theming.JavaFXThemes;
 import io.github.palexdev.materialfx.theming.MaterialFXStylesheets;
 import io.github.palexdev.materialfx.theming.UserAgentBuilder;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import io.github.palexdev.mfxresources.fonts.MFXFontIcon;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -27,7 +27,7 @@ public class Application extends javafx.application.Application {
 
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/LoginView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/RegisterStepper.fxml"));
       //  Parent root = FXMLLoader.load();
 
         Scene scene = new Scene(fxmlLoader.load());
