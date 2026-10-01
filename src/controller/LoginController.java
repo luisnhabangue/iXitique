@@ -32,4 +32,8 @@ public class LoginController {
     public void createAccount(ActionEvent actionEvent) {
 
     }
+
+    public void Logar(ActionEvent actionEvent) {
+
+    }
 }
