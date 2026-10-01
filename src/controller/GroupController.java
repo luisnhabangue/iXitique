@@ -13,7 +13,7 @@ public class GroupController {
 
 
     public GroupController() {
-       // this.groupDao = new GroupDao();
+        //this.groupDao = new GroupDao();
         this.grupos = groupDao.carregarGrupos();
 
     }
@@ -46,7 +46,7 @@ public class GroupController {
         for (int i = 0; i < grupos.size(); i++){
             if (grupos.get(i).getGroupId() == id){
                grupos.set(i, novo);
-               groupDao.save(grupos);
+               groupDao.save(novo);
                return true;
             }
         }
