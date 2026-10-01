@@ -172,8 +172,14 @@ public class UserDao implements UserDaoInterface {
     }
     @Override
     public List<User> listAllUsers() {
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-        return null;
+        String hql = "FROM User";
+
+        return entityManager
+                .createQuery(hql, User.class)
+                .getResultList();
+
     }
 
 
