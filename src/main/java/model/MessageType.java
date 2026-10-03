@@ -1,5 +1,0 @@
-package model;
-
-public enum MessageType {
-    REMINDER, WARNING, CONFIRMATION, DELAY, PAYMENT_RECEIVED, INFORMATION
-}

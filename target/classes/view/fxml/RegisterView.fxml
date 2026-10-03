@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegisterController">
+
+    <children>
+        <BorderPane prefHeight="516.0" prefWidth="710.0" style="-fx-background-color: blue;">
+         <center>
+                <AnchorPane prefHeight="516.0" prefWidth="427.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label layoutX="74.0" layoutY="201.0" prefHeight="31.0" prefWidth="213.0" text="Crie a sua conta">
+                            <font>
+                                <Font name="Plus Jakarta Sans Regular" size="23.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="74.0" layoutY="234.0" prefHeight="21.0" prefWidth="108.0" text="Já tem uma conta? ">
+                            <font>
+                                <Font name="Plus Jakarta Sans Regular" size="12.0" />
+                            </font>
+                        </Label>
+                        <MFXButton fx:id="btCriarConta" layoutX="129.0" layoutY="269.0" prefHeight="35.0" prefWidth="243.0" style="-fx-background-color: cyan;" text="Criar Conta" />
+                      <VBox layoutX="476.0" prefHeight="516.0" prefWidth="284.0" style="-fx-background-color: #048523;" />
+                  <Hyperlink layoutX="178.0" layoutY="232.0" text="Entre na sua conta" />
+                    </children>
+                </AnchorPane>
+         </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
