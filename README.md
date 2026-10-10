@@ -22,7 +22,7 @@ O sistema prevê as seguintes funcionalidades:
 -Gestão de grupos: criação, consulta, atualização e gestão dos grupos de xitique.
 -Gestão de participantes: associação de utilizadores aos grupos e gestão das respetivas participações.
 -Gestão de papéis: atribuição e alteração de responsabilidades, como líder, tesoureiro e membro.
--Gestão de contribuições:** registo e acompanhamento dos valores contribuídos pelos participantes.
+-Gestão de contribuições: registo e acompanhamento dos valores contribuídos pelos participantes.
 -Gestão de ciclos: criação e acompanhamento dos ciclos de poupança.
 -Gestão de rondas: organização da ordem de recebimento dos participantes.
 -Gestão de recebimentos: registo e acompanhamento dos valores entregues aos participantes.
